@@ -1,0 +1,319 @@
+import random
+import replit
+import time
+
+inventory= []
+playerHealth=10
+def printText(lore):
+  for char in lore:
+    print(char, end = '', flush=True)
+    time.sleep(.001)
+  print () 
+
+printText("Once, in the beginning of time, there were 8 deities that ruled the cosmos. The 2 main ones represented life and death, while the other 6 represented the magic elements of light, darkness, water, earth, fire , and wind. The 7 deities were busy on one planet, earth. “I bless this place with bodies of water” Aqua, the water goddess stated. And with that said, the planet was filled with water. “I bless this place with land, so that plants can thrive” Terra, the earth god claimed. All of a sudden, huge chunks of land appeared. “I bless this place with volcanoes,” Ignis, the fire god spoke. So it was, volcanoes appeared, forming a ring of fire. “I bless this place with a sky, along with wind and weather.” Caelum, the sky goddess cooed. The sky then appeared, with gusts of wind and clouds forming. “I bless this place with light, the sun shall rise over it, forming day.” Lux, goddess of light claimed. With that being said, the sun began to rise. “I bless this place darkness, for the sun must rest for some time, the moon will rise, forming night, and it will change every time, along with the stars.” Obscuro, the dark god said. Then the moon and stars rose. Now, Lux and Obscuro worked together to keep the sky the way it was. Then it was Vita, the Goddess of life’s turn. “I bless this place with animals, of all kinds, to live and survive.” Vita then spread her arms, putting her hands on the earth, and so many life forms sprung from out of nowhere. Mortem, the god of death, seeing that he was forgotten, he grew furious. As the living beings grew to spread around the earth, the most intelligent ones were humanlike, which included humans, elves, and other humanoid creatures. As the first ones began to find out the deities created them, they thanked them, but Mortem put a gift. “I bless this place with death of all kinds, there must be an equal balance.” The rest of the deities said nothing, for they knew his wrath was worse than ignis’s. As time passed, the mortals started to prefer the other deities than Mortem, since they knew that he was dangerous, and was the cause of all kinds of death. Knowing this, Mortem’s anger grew rapidly.He then found out that the mortals created civilizations, and he decided to cast a curse on them, which first affected one. With all the negative feelings Mortem had within him, he created a monster, the scariest and most deadliest of the creatures Vita created. He named it Umbra, the shadow of fury, and released it into the world. Umbra fed on the negative thoughts, growing stronger and powerful. In where he landed, there were so many negative thoughts, he grew powerful in no time. The people, seeing that this monster threatened to take over everything, prayed to the gods for their help. The deities realized that they had to do something to take it down. Vita realized Mortem created it, and she knew what to do. Summoning people of all kinds, Vita wanted the 6 elemental deities to bless the chosen people with magic of their element, in order to stop Mortem and Umbra. As the people were blessed with magic, they were released to learn and teach other people, for now everyone had the seed of  magic, a certain element chosen based on their personality. Mortem, hearing this, did the same thing, but with the wickedest and malicious people, and cursed them his magic of destruction. The Gods then united in a meeting (All but Mortem), and knew something had to be done. So they created a temple to seal Umbra, using 7 keys created from their own magic, and the 7 padlocks. All they needed was someone worthy to do it, someone who was brave and kind. The chosen one was named Sirius, a wizard who mastered the magic of Light. Sirius faced Umbra, and managed to seal Umbra within the temple, but Umbra muttered something “Someday, in a thousand years, I will return, and this world I shall conquer, for Mortem’s sake!” With that, he was sealed. A thousand years later, You, a descendant of Sirius, learned about the resurgence of Umbra, and only you can stop him, Mortem and his evil army!")
+time.sleep(10)
+replit.clear()
+
+printText("Now, what kind of magic do you want to use? Light, Darkness, Fire, Earth, Sky, or Water?")
+userChoice= input(" >>")
+if userChoice==("Light"):
+  printText("Great!")
+elif userChoice==("Darkness"):
+  printText("All right!")
+elif userChoice==("Fire"):
+  printText("Nice!")
+elif userChoice==("Earth"):
+  printText("Good choice")
+elif userChoice==("Sky"):
+  printText("Exellent option!")
+elif userChoice==("Water"):
+  printText("Cool!")
+else:
+  printText("Choose again!")
+  userChoice= input(">> ")
+printText("Now, let's enter the Temple!")
+
+printText("You currently have 10 hearts. You can lose health when being attacked, or win health with potions.")
+printText("Your magic can range from 3-5 hearts of damage, but so can enemies!")
+printText("As you explore the temple, suddenly, an orc appears! What do you do? ")
+def battle():
+ printText("Type fight to battle, or type flee to run away.")
+ user_choice= input(">> ")
+ if user_choice==("flee"):
+   printText("You ran away")
+ elif user_choice==("fight"):
+   printText("You challenge the enemy to a magic duel, knowing that it has Mortem's magic.")
+   printText("You can choose between three magic spells, one affects 3 hearts, the second one affects 4 hearts, and the third affects 5 hearts! ")
+   printText(("Your health:", playerHealth))
+   printText("Enemy health: 10")
+   print("The magic you chose was", userChoice)
+   if userChoice==("Light"):
+     printText("Your options are: Light blast- 3 hearts damage, Light arrow rain- 4 hearts damage, and Light supernova blast- 5 hearts damage")
+   elif userChoice==("Darkness"):
+     printText("Your options are: Dark blast- 3 hearts damage, Dark dagger rain- 4 hearts damage, and Dark hole vortex- 5 hearts damage")
+   elif userChoice==("Fire"):
+     printText("Your options are: Flaming embers- 3 hearts damage, Fiery pyrohelix- 4 hearts damage, and Schorching lava eruption- 5 hearts damage")  
+   elif userChoice==("Earth"):
+     printText("Your optioins are: Flower hurricane- 3 hearts damage, Earth spears- 4 hearts  damage, and Tectonic earthquake rage- 5 hearts damage")
+   elif userChoice==("Sky"):
+     printText("Your options are: Hailstorm- 3 hearts damage,  Thunderbolt strike- 4 hearts damage, and Stormy overdrive- 5 hearts damage")
+   elif userChoice==("Water"):
+     printText("Your options are: Geyser- 3 hearts damage, Flood- 4 hearts damage, and Tsunami wave- 5 hearts damage")
+     printText("Type an attack that you chose from above by the number")
+   running= True
+   while running:
+     enemyHealth= 10
+     player_health=playerHealth
+     player_attack= int(input(">> "))
+     print("You chose",player_attack)
+     if player_attack==(3):
+       print("Damage done to Enemy's health is", player_attack)
+       enemyHealth -= player_attack
+       print("Enemy's health is now", enemyHealth)
+     elif player_attack==(4):
+       print("Damage done to Enemy's health is", player_attack)
+       enemyHealth -= player_attack
+       print("Enemy's health is now", enemyHealth)
+     elif player_attack==(5):
+       print("Damage done to Enemy's health is", player_attack)
+       enemyHealth -= player_attack
+       print("Enemy's health is now", enemyHealth)
+     if enemyHealth <=0:
+       print("The battle is finished!")
+       print("Your health is ", playerHealth)
+       print("Enemy's health is", enemyHealth)
+       break 
+     enemy_attack= random.randint(3,5)
+     print("Enemy damages",enemy_attack)
+     player_health -= enemy_attack
+     print("Your health is now", player_health)
+     if playerHealth <=0:
+       print("The battle is finished!")
+       print("Your health is ", playerHealth)
+       print("Enemy's health is", enemyHealth)
+       break
+battle()
+printText("As you destroyed or ran away from the orc, you found something in the ground. It was treasure! You have an inventory, in which you can put your potions and the 7 keys in there. You opened the chest, and it contained a potion that heals 5 hearts, and a potion that heals 4 hearts. Which do you choose to take? Type 5 hearts for the 5 hearts potion, or 4 hearts for the 4 hearts potion.")
+item = input("'4 hearts'or '5 hearts'>> ")
+if item == "4 hearts" or item == "5 hearts":
+ inventory.append(item)
+printText(("Inventory:", inventory))
+printText("Do you want to use your potion from your inventory? Type yes or no.")
+choice= input(">> ")
+if choice=="no":
+ print("Alright")
+elif choice=="yes":
+ print("Inventory:", inventory)
+ item = input("Choose an item from your inventory to use >> ")
+ if item in inventory:
+   if item == "4 hearts":
+     playerHealth += 4
+     inventory.remove("4 hearts")
+     print("Your health is now:", playerHealth)
+   elif item == "5 hearts":
+     playerHealth += 5 
+     inventory.remove("5 hearts")
+     print("Your health is now:", playerHealth)
+ else:
+  print("Please type something from your inventory!")
+printText("Within this room, you hear a loud roar! You turn to your back, to see that you have encountered an angry Manticore.")
+battle()
+printText("As the Manticore flees, you find treasure again! You opened the chest, and it contained a potion that heals 5 hearts, and a potion that heals 4 hearts. Which do you choose to take? Type 5 hearts for the 5 hearts potion, or 4 hearts for the 4 hearts potion. ")
+item = input("'4 hearts 'or '5 hearts '")
+if item == "4 hearts" or item == "5 hearts":
+ inventory.append(item)
+print(("Inventory:", inventory))
+printText("Do you want to use your potion from your inventory? Type yes or no.")
+choice= input(">> ")
+if choice=="no":
+ print("Alright")
+elif choice=="yes":
+ print("Inventory:", inventory)
+ item = input("Choose an item from your inventory to use >> ")
+ if item in inventory:
+   if item == "4 hearts":
+     playerHealth += 4
+     inventory.remove("4 hearts")
+     print("Your health is now:", playerHealth)
+   elif item == "5 hearts":
+     playerHealth += 5 
+     inventory.remove("5 hearts")
+     print("Your health is now:", playerHealth)
+ else:
+  print("Please type something from your inventory!")
+printText("As you try to search for the first key, you hear an angry cackle. The boss of this part of the temple is a witch. Her name is Wither.If you can defeat her, you may be able to find the first key!")
+battle()
+printText("As you destroy Wither, she disintegrated. All of a sudden, you see something shining bright. The first key! You collect it, and now you need 6 more keys in order to be able to seal Umbra.")
+printText("You won't find anything anymore in this room, so let's move to the next one!")
+direction=input("Choose a direction(n, e, s, w, )")
+while direction !="e":
+  print("You can't go there!")
+  direction=input("Choose a direction(n, e, s, w )")
+time.sleep(3)
+replit.clear()
+printText("Moving east, to the second chamber...")
+
+printText("This is the second chamber, if you are lucky enough, you may find 2 more keys. ")
+printText("As you walk through, you bump into 2 warlocks, that are twins. Their names were Castor and Pollux.")
+printText("They found out that you were trying to stop Umbra, and they challenge you to a battle! Castor wanted to go first")
+battle()
+printText("Next went Pollux, enraged that you destroyed his twin")
+battle()
+printText("As they dissapear, 2 more keys appear! Luckliy enough, 2 potions appear! A 4 and 5 heart potion are there.")
+item = input("'4 hearts 'or '5 hearts '")
+if item == "4 hearts" or item == "5 hearts":
+ inventory.append(item)
+printText(("Inventory:", inventory))
+printText("Do you want to use your potion from your inventory? Type yes or no.")
+choice= input(">> ")
+if choice=="no":
+ print("Alright")
+elif choice=="yes":
+ print("Inventory:", inventory)
+ item = input("Choose an item from your inventory to use >> ")
+ if item in inventory:
+   if item == "4 hearts":
+     playerHealth += 4
+     inventory.remove("4 hearts")
+     print("Your health is now:", playerHealth)
+   elif item == "5 hearts":
+     playerHealth += 5 
+     inventory.remove("5 hearts")
+     print("Your health is now:", playerHealth)
+ else:
+  print("Please type something from your inventory!") 
+printText("Nothing else will be found in this place, so let's move on!")
+direction=input("Choose a direction(n, e, s, w)")
+while direction !="s":
+  print("You can't go there!")
+  direction=input("Choose a direction(n, e, s, w)")
+time.sleep(3)
+replit.clear()
+printText("Moving south, to the third chamber...")
+printText("Now, this is the third chamber, there will be 2 keys to find in here, but there will be 3 enemies waiting for you.")
+printText("You started to wander around, but suddenly, you find an ogre, and he doesn't look too happy!")
+battle()
+printText("You find a potion in the ground,as you destroyed him. It was a 4 heart healing potion.")
+item = input("'4 hearts ' ")
+if item == "4 hearts":
+  inventory.append(item)
+printText(("Inventory:",inventory))
+printText("Do you want to use your potion from your inventory? Type yes or no.")
+choice= input(">> ")
+if choice=="no":
+  print("Alright")
+elif choice=="yes":
+ print("Inventory:", inventory)
+ item = input("Choose an item from your inventory to use >> ")
+ if item in inventory:
+   if item == "4 hearts":
+     playerHealth += 4
+     inventory.remove("4 hearts")
+     print("Your health is now:", playerHealth)
+ else:
+  print("Please type something from your inventory!") 
+printText("The ogre died, but now you have to confront a dark skeleton.")
+battle()
+printText("As the dark skeleton dies, another key appears, but the final person you have to battle is a dark Necromancer. The Necromancer introduces himself as Jinzo, the darkness reborn.")
+battle()
+printText("As Jinzo disintigrated, the 5th key appears! You also find 3 potions, one that heals 4 hearts, one that heals 5 hearts, and one that heals 6 hearts!")
+item= input("'4 hearts' or '5 hearts' or '6 hearts'")
+if item=="4 hearts" or item=="5 hearts" or item=="6 hearts":
+  inventory.append(item)
+printText (("Inventory:", inventory))
+printText("Do you want to use something from your inventory?")
+choice= input(">> ")
+if choice=="no":
+  print("Alright")
+elif choice=="yes":
+ print("Inventory:", inventory)
+ item = input("Choose an item from your inventory to use >> ")
+ if item in inventory:
+   if item == "4 hearts":
+     playerHealth += 4
+     inventory.remove("4 hearts")
+     print("Your health is now:", playerHealth)
+   elif item == "5 hearts":
+      playerHealth += 5
+      inventory.remove("5 hearts")
+      print("Your health is now:", playerHealth )
+   elif item == "6 hearts":
+      playerHealth +=6
+      inventory.remove("6 hearts")
+      print("Your health is now:", playerHealth)
+ else:
+  print("Please type something from your inventory!") 
+printText("Now that you found 5 keys, you will need two more, and a good place to go is the 4th chamber.")
+direction=input("Choose a direction(n, e, s, w)")
+while direction !="e":
+  print("You can't go there!")
+  direction=input("Choose a direction(n, e, s, w)")
+time.sleep(3)
+replit.clear()
+printText("Moving east, to the fourth chamber...")
+printText("Wow, it's hard to believe that you have gone this far, so, are you ready to face Umbra, I hope so. You may find the final keys, and maybe a special prize in this chamber.")
+printText("As you look around, you find a zombie, wanting to attack you!")
+battle()
+printText("With the zombie out of the way, feel free to pick a potion of 4 or 5 hearts!")
+item= input("'4 hearts' or '5 hearts'")
+if item == "4 hearts" or item == "5 hearts":
+ inventory.append(item)
+printText(("Inventory:", inventory))
+printText("Do you want to use something from your inventory?")
+choice= input(">> ")
+if choice=="no":
+ print("Alright")
+elif choice=="yes":
+ print("Inventory:", inventory)
+ item = input("Choose an item from your inventory to use >> ")
+ if item in inventory:
+   if item == "4 hearts":
+     playerHealth += 4
+     inventory.remove("4 hearts")
+     print("Your health is now:", playerHealth)
+   elif item == "5 hearts":
+     playerHealth += 5 
+     inventory.remove("5 hearts")
+     print("Your health is now:", playerHealth)
+ else:
+  print("Please type something from your inventory!")
+printText("As the zombie dies, you then see a bigger threat: the Lich ""Foolish mortal, you will never make it through me!")
+battle()
+printText("As the Lich dies, you see the two last keys needed! Suddenly, You see Vita, the goddess of life! ""You finally are going to make it, I knew you could do it! Now, I will grant you armor, the Armor of Life. Not even weapons can destroy it! Or you can pick the Potion of life, which heals all 10 hearts." "With that, she leaves. ")
+item= input("'Magic armor' or '10 hearts'")
+if item== "Magic armor" or item== " 10 hearts":
+  inventory.append(item)
+printText(("Inventory:", inventory))
+printText("Do you want to use something from your inventory?")
+choice= input(">> ")
+if choice=="no":
+ print("Alright")
+elif choice=="yes":
+ print("Inventory:", inventory)
+ item = input("Choose an item from your inventory to use >> ")
+ if item in inventory:
+   if item == "10 hearts":
+     playerHealth += 10
+     inventory.remove("10 hearts")
+     print("Your health is now:", playerHealth)
+   elif item == "Magic armor":
+     playerHealth += 5 
+     inventory.remove("Magic armor")
+     print("Your health is now:", playerHealth)
+ else:
+  print("Please type something from your inventory!")
+printText("Now, let's go seal Umbra!")
+direction=input("Choose a direction(n, e, s, w)")
+while direction !="e":
+  print("You can't go there!")
+  direction=input("Choose a direction(n, e, s, w)")
+time.sleep(3)
+replit.clear()
+printText("Moving east, to the sealing chamber..")
+printText("All was still once you entered, until you heard a silent rumble. As you turned, you saw Umbra, the shadow of fury, in the flesh.""You! You smell of Sirius, no wonder you managed to come to try to seal me! Well, I will have to stop you! I refuse to fall to Vita, for Mortem will be successful! Now, perish, lousy mortal!")
+battle()
+printText("As Mortem was defeated, he howled in rage, ""Noooo! This cannot be the end of me! I can't be gone! Nooooooooooooo!" "The 7 keys magically floated to seal a dead Umbra, and with that, sealing Mortem for all eternity.")
+printText("Suddenly, Vita appeared. She was also with Sirius, your many greats Grandfather." "Well done, we knew we could count on you" "They say. Vita was glad," "I want to thank you, for sealing evil for eternity. Now, as a gift of gratitude, you will be never forgotten as a great legend. You have earned your place as demigod of Justice, and you will now earn my magic: The magic of creation. Use it wisely."" And with that, peace was restored, and all was good.")
+time.sleep(3)
+replit.clear()
+printText("The end")
